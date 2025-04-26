@@ -60,7 +60,7 @@ FlyAR oyununda, çocukların eğlenceli bir şekilde öğrenmelerini sağlayacak
 
 - **Kültürel Simgeler:** Uzaktan seçilebilen, bölgenin ikonik yapıları ve doğal güzellikleri
   
-  ![Deniz Feneri](../kızkulesi.jpg)
+  ![Deniz Feneri](../kizkulesi.jpg)
   
   ![Anıtkabir](../anit.jpg)
 

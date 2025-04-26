@@ -124,15 +124,15 @@
                 <div class="sidebar">
                     <h4>İçindekiler</h4>
                     <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action active" onclick="loadMarkdown('README.md')">Ana Sayfa</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/giris.md')">Giriş ve Genel Bakış</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/oyun-mekanigi.md')">Oyun Mekaniği</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/kullanici-girisi.md')">Kullanıcı Girişi ve Profil</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/uygulama-bolumleri.md')">Uygulama Bölümleri</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/teknik-altyapi.md')">Teknik Altyapı</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/dagitim-erisim.md')">Dağıtım ve Erişim</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/swot-analizi.md')">SWOT Analizi</a>
-                        <a href="#" class="list-group-item list-group-item-action" onclick="loadMarkdown('docs/karakterler-nesneler.md')">Karakterler ve Nesneler</a>
+                        <a href="#" class="list-group-item list-group-item-action active" onclick="loadContent('README.md')">Ana Sayfa</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/giris.md')">Giriş ve Genel Bakış</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/oyun-mekanigi.md')">Oyun Mekaniği</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/kullanici-girisi.md')">Kullanıcı Girişi ve Profil</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/uygulama-bolumleri.md')">Uygulama Bölümleri</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/teknik-altyapi.md')">Teknik Altyapı</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/dagitim-erisim.md')">Dağıtım ve Erişim</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/swot-analizi.md')">SWOT Analizi</a>
+                        <a href="#" class="list-group-item list-group-item-action" onclick="loadContent('docs/karakterler-nesneler.md')">Karakterler ve Nesneler</a>
                     </div>
                 </div>
             </div>
@@ -155,11 +155,11 @@
     <script>
         // Sayfa ilk yüklendiğinde README.md dosyasını yükle
         document.addEventListener('DOMContentLoaded', function() {
-            loadMarkdown('README.md');
+            loadContent('README.md');
         });
 
         // Markdown dosyasını yükle ve dönüştür
-        function loadMarkdown(file) {
+        function loadContent(file) {
             // Aktif bağlantıyı güncelle
             document.querySelectorAll('.list-group-item').forEach(item => {
                 item.classList.remove('active');
@@ -203,7 +203,7 @@
                 if (href && href.startsWith('./docs/')) {
                     link.onclick = function(e) {
                         e.preventDefault();
-                        loadMarkdown(href.replace('./', ''));
+                        loadContent(href.replace('./', ''));
                     };
                 }
             });

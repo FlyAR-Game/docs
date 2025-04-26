@@ -177,7 +177,18 @@
                 })
                 .then(markdownText => {
                     // Markdown içeriğini HTML'e dönüştür
-                    const htmlContent = marked.parse(markdownText);
+                    const renderer = new marked.Renderer();
+                    
+                    // Görsel dosya yollarını düzelt
+                    renderer.image = function(href, title, text) {
+                        // ../karakter.jpg gibi yolları düzeltme
+                        if (href.startsWith('../')) {
+                            href = href.replace('../', '');
+                        }
+                        return `<img src="${href}" alt="${text}" title="${title || ''}" class="img-fluid rounded">`;
+                    };
+                    
+                    const htmlContent = marked.parse(markdownText, { renderer: renderer });
                     
                     // İçeriği sayfaya yerleştir
                     document.getElementById('content').innerHTML = htmlContent;
